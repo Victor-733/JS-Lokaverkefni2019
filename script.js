@@ -26,6 +26,9 @@ fetch("https://apis.is/concerts")
         div.appendChild(date);
         main.appendChild(div);
     });
+
+    submit = getElementById("search-button");
+    submit.addEventListener("click", doSearch);
 })
 .catch(function(error) {
     // This is where you run code if the server returns any errors
