@@ -11,13 +11,19 @@ fetch("https://apis.is/concerts")
     return concerts.map(function(concert) { // Map through the results and for each run the code below
         let div = document.createElement('div'), //  Create the elements we need
             img = document.createElement('img'),
-            span = document.createElement('span');
+            p_name = document.createElement('p'),
+            p_place = document.createElement('p'),
+            date = document.createElement('span');
         
         img.src = concert.imageSource;  // Add the source of the image to be the src of the img element
-        span.innerHTML = concert.eventDateName; // Make the HTML of our span to be the first and last name of our author
+        p_name.textContent = concert.eventDateName; // Make the HTML of our span to be the first and last name of our author
+        p_place.textContent = concert.eventHallName;
+        date.innerHTML = concert.dateOfShow;
         
         div.appendChild(img);
-        div.appendChild(span);
+        div.appendChild(p_name);
+        div.appendChild(p_place);
+        div.appendChild(date);
         main.appendChild(div);
     });
 })
