@@ -30,6 +30,8 @@ fetch("https://apis.is/concerts")
         concert.element = div;
         return concert;
     });
+
+    // search barinn
     const submit = document.getElementById("search");
     const input_box = document.getElementById("search-bar");
     submit.addEventListener("submit", doSearch);
@@ -46,6 +48,12 @@ fetch("https://apis.is/concerts")
             }
         });
     }
+
+    //date pickerinn
+    const date_picker = document.getElementById("date-picker");
+
+    let sart_date;
+    let end_date;
 })
 
 .catch(function(error) {
