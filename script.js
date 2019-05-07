@@ -1,5 +1,6 @@
 const main = document.getElementById("gallery");
 let concerts;
+let all_concerts = [];
 
 fetch("https://apis.is/concerts")
 .then(function(results) {
@@ -26,6 +27,7 @@ fetch("https://apis.is/concerts")
         div.appendChild(p_place);
         div.appendChild(date);
         main.appendChild(div);
+        all_concerts.push(div);
 
         concert.element = div;
         return concert;
@@ -52,8 +54,29 @@ fetch("https://apis.is/concerts")
     //date pickerinn
     const date_picker = document.getElementById("date-picker");
 
-    let sart_date;
-    let end_date;
+    flatpickr(date_picker, {
+        locale: "is",
+        mode: "range",
+        altInput: true,
+        altFormat: "D.d.m.Y",
+        onChange(selectedDates){
+            let startDate = selectedDates[0];
+            let endDate = selectedDates[1];
+            searchDate(startDate, endDate);
+        }
+    })
+
+    function searchDate(start, end){
+        let before = end.toLocaleString().split(",");
+        let after = start.toLocaleString().split(",");
+        all_concerts.forEach(function(concert) {
+            if(){
+
+            } else {
+                
+            }
+        });
+    }
 })
 
 .catch(function(error) {
