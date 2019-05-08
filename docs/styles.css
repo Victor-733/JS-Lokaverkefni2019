@@ -19,3 +19,6 @@ nav {
     justify-content: center;
     gap: 1em;
 }
+img {
+    max-width: 2em;
+}
